@@ -1,0 +1,11 @@
+[Unit]
+Description=Display a percentage for the pihole on the
+After=network.target
+
+[Service]
+Type=idle
+WorkingDirectory={directory}
+ExecStart={python3} pihole_rainbow_stats.py
+
+[Install]
+WantedBy=multi-user.target
